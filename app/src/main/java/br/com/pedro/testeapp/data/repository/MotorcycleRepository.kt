@@ -8,6 +8,7 @@ import br.com.pedro.testeapp.ui.Motorcycler
 class MotorcycleRepository {
 
     companion object {
+        //CHAVE API
         private const val API_KEY = "BbtSIv8ffe0TMSwzXG6N04EwwoU32NwiKjtrhqRE"
     }
 
