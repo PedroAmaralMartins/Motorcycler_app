@@ -14,8 +14,4 @@ interface NinjasApiService {
         @Query("make") make: String
     ): Response<List<MotorcycleInfo>>
 
-    @GET("motorcyclemakes")
-    suspend fun getMotorcycleMakes(
-        @Header("X-Api-Key") apiKey: String
-    ): Response<List<String>>
 }

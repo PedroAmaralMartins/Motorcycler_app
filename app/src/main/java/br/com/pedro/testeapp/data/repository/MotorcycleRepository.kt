@@ -32,7 +32,7 @@ class MotorcycleRepository {
         }
     }
 
-    suspend fun getBrands (): List<String>{
+     fun getBrands (): List<String>{
         return listOf(
             "BMW",
             "Ducati",
@@ -46,25 +46,4 @@ class MotorcycleRepository {
             ).sorted()
     }
 
-    suspend fun getMotorcyclesBrands(): List<String> {
-        return try {
-            val response = NinjasRetrofit.api.getMotorcycleMakes(API_KEY)
-
-            if (response.isSuccessful) {
-                val body = response.body() ?: emptyList()
-                body.filter { it.isNotBlank() }
-                    .map { make ->
-                        make.trim().lowercase().replaceFirstChar { it.uppercase() }
-                    }
-                    .distinct()
-                    .sorted()
-            } else {
-                Log.e("MotorcycleRepository", "Erro na API: ${response.code()}")
-                emptyList()
-            }
-        } catch (e: Exception) {
-            Log.e("MotorcycleRepository", "Exception ao buscar marcas: ${e.message}", e)
-            emptyList()
-        }
-    }
 }
