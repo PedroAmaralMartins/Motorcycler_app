@@ -1,0 +1,15 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Quando pressionado -->
+    <item android:state_pressed="true"
+        android:drawable="@android:color/darker_gray"/>
+
+    <!-- Quando selecionado -->
+    <item android:state_selected="true"
+        android:drawable="@android:color/darker_gray"/>
+
+    <!-- Padrão -->
+    <item android:drawable="@android:color/white"/>
+
+</selector>
+

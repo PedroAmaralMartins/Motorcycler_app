@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- spacing -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+
+    <!-- Corners -->
+    <dimen name="radius_sm">6dp</dimen>
+    <dimen name="radius_md">10dp</dimen>
+    <dimen name="radius_lg">14dp</dimen>
+    <dimen name="radius_pill">20dp</dimen>
+
+    <!-- component height -->
+    <dimen name="btn_height">52dp</dimen>
+    <dimen name="input_height">52dp</dimen>
+    <dimen name="hero_height">120dp</dimen>
+    <dimen name="moto_thumb_width">56dp</dimen>
+    <dimen name="moto_thumb_height">40dp</dimen>
+    <dimen name="avatar_size">34dp</dimen>
+    <dimen name="back_btn_size">28dp</dimen>
+
+    <!-- text -->
+    <dimen name="text_display">22sp</dimen>
+    <dimen name="text_title">16sp</dimen>
+    <dimen name="text_body">13sp</dimen>
+    <dimen name="text_caption">11sp</dimen>
+    <dimen name="text_label">9sp</dimen>
+
+</resources>
