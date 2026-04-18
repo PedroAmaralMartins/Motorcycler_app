@@ -6,7 +6,7 @@
     android:background="@color/bg_primary"
     android:padding="@dimen/spacing_md">
 
-    <!-- Dropdown de marcas -->
+    <!-- Dropdown Brands -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/dropdown_me_list"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
@@ -35,7 +35,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Botão Pesquisar -->
+    <!-- button searching -->
     <Button
         android:layout_width="0dp"
         android:layout_height="52dp"
