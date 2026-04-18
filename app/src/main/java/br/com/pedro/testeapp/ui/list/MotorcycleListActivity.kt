@@ -2,6 +2,7 @@ package br.com.pedro.testeapp.ui.list
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
@@ -34,6 +35,7 @@ class MotorcycleListActivity : AppCompatActivity() {
         setupToolbar()
         setupRecyclerView()
         observeViewModel()
+        logoToolbar()
 
         val mark = intent.getStringExtra("MARCA_SELECIONADA")
         if (mark != null) {
@@ -45,6 +47,13 @@ class MotorcycleListActivity : AppCompatActivity() {
         val toolbar: Toolbar = binding.toolbar
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
+    }
+
+    private fun logoToolbar(){
+        val logoImagemView: ImageView = binding.toolbarLogo
+        logoImagemView.setOnClickListener {
+            finish()
+        }
     }
 
     private fun setupRecyclerView() {
@@ -66,4 +75,6 @@ class MotorcycleListActivity : AppCompatActivity() {
             adapter.updateList(motorcycles)
         }
     }
+
+
 }

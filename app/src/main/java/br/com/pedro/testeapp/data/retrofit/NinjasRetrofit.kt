@@ -11,3 +11,5 @@ object NinjasRetrofit {
             .create(NinjasApiService::class.java)
     }
 }
+
+

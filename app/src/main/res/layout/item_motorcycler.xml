@@ -19,7 +19,6 @@
             android:layout_height="0dp"
             android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="1:1"
-            android:src="@mipmap/placeholder"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/name_motorcycle"
             app:layout_constraintStart_toStartOf="parent"
