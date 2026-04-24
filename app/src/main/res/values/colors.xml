@@ -19,6 +19,7 @@
     <color name="bg_surface">#161616</color>
     <color name="bg_surface2">#1F1F1F</color>
     <color name="bg_surface3">#2A2A2A</color>
+    <color name="toolbar_menu">#071B75</color>
 
     <!-- Textos -->
     <color name="text_primary">#F0F0F0</color>

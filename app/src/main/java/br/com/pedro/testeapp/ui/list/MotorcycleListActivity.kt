@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.WindowCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.pedro.testeapp.adapter.MotorcycleAdapter
@@ -35,7 +36,8 @@ class MotorcycleListActivity : AppCompatActivity() {
         setupToolbar()
         setupRecyclerView()
         observeViewModel()
-        logoToolbar()
+
+        WindowCompat.setDecorFitsSystemWindows(window,false)
 
         val mark = intent.getStringExtra("MARCA_SELECIONADA")
         if (mark != null) {
@@ -43,17 +45,17 @@ class MotorcycleListActivity : AppCompatActivity() {
         }
     }
 
+
     private fun setupToolbar() {
-        val toolbar: Toolbar = binding.toolbar
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowTitleEnabled(false)
     }
 
-    private fun logoToolbar(){
-        val logoImagemView: ImageView = binding.toolbarLogo
-        logoImagemView.setOnClickListener {
-            finish()
-        }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return super.onSupportNavigateUp()
     }
 
     private fun setupRecyclerView() {
