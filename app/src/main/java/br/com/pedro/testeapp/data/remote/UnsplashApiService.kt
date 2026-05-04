@@ -1,6 +1,6 @@
-package br.com.pedro.testeapp.data.network
+package br.com.pedro.testeapp.data.remote
 
-import br.com.pedro.testeapp.data.model.UnsplashResponse
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Query
@@ -12,5 +12,5 @@ interface UnsplashApiService {
         @Query("query")query:String,
         @Query("per_page")perPage: Int = 5,
         @Query("orientation") orientation: String = "landscape"
-    ): retrofit2.Response<UnsplashResponse>
+    ): Response<UnsplashResponse>
 }

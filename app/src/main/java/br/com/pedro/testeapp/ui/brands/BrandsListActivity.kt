@@ -2,27 +2,23 @@ package br.com.pedro.testeapp.ui.brands
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
+import br.com.pedro.testeapp.R
 import br.com.pedro.testeapp.data.repository.MotorcycleRepository
 import br.com.pedro.testeapp.databinding.BrandsListBinding
 import br.com.pedro.testeapp.ui.list.MotorcycleListActivity
-import br.com.pedro.testeapp.ui.list.MotorcycleViewModel
-import br.com.pedro.testeapp.ui.list.MotorcycleViewModelFactory
 
 class BrandsListActivity : AppCompatActivity() {
 
         private val binding by lazy {
             BrandsListBinding.inflate(layoutInflater)
         }
-        private val viewModel by lazy {
-            ViewModelProvider(
-                this,
-                MotorcycleViewModelFactory(MotorcycleRepository())
-            )[MotorcycleViewModel::class.java]
+
+        private val viewModel: BrandsViewModel by viewModels {
+            BrandsViewModelFactory(MotorcycleRepository())
         }
 
         override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,13 +60,14 @@ class BrandsListActivity : AppCompatActivity() {
 
                 if (selectBrand.isNotEmpty()) {
                     val intent = Intent(this, MotorcycleListActivity::class.java).apply {
-                        putExtra("MARCA_SELECIONADA", selectBrand)
+                        putExtra(MotorcycleListActivity.EXTRA_BRAND, selectBrand)
                     }
                     startActivity(intent)
                 } else {
                     Toast.makeText(
                         this,
-                        "Selecione uma Marca Primeiro!", Toast.LENGTH_LONG
+                        getString(R.string.select_brand_first),
+                                Toast.LENGTH_LONG
                     ).show()
                 }
             }

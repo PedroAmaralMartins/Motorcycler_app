@@ -2,12 +2,9 @@ package br.com.pedro.testeapp.data.repository
 
 import android.util.Log
 import br.com.pedro.testeapp.data.mapper.toDomain
-import br.com.pedro.testeapp.data.model.UnsplashResponse
-import br.com.pedro.testeapp.data.network.UnsplashApiService
-import br.com.pedro.testeapp.data.retrofit.NinjasRetrofit
-import br.com.pedro.testeapp.data.retrofit.UnsplashRetrofit
-import br.com.pedro.testeapp.ui.Motorcycler
-import br.com.pedro.testeapp.ui.list.MotorcycleViewModel
+import br.com.pedro.testeapp.data.remote.NinjasClient
+import br.com.pedro.testeapp.data.remote.UnsplashClient
+import br.com.pedro.testeapp.domain.Motorcycler
 
 class MotorcycleRepository {
 
@@ -20,7 +17,7 @@ class MotorcycleRepository {
         if (mark.isNullOrEmpty()) return emptyList()
 
         return try {
-            val response = NinjasRetrofit.api.getMotorcycles(
+            val response = NinjasClient.api.getMotorcycles(
                 apiKey = API_KEY,
                 make = mark
             )
@@ -56,7 +53,7 @@ class MotorcycleRepository {
         )
         for (query in queries){
             try {
-                val response = UnsplashRetrofit.api.searchPhoto(
+                val response = UnsplashClient.api.searchPhoto(
                     authorization = UNSPLASH_KEY,
                     query = query
                 )

@@ -1,9 +1,6 @@
-package br.com.pedro.testeapp.data.retrofit
+package br.com.pedro.testeapp.data.remote
 
-import br.com.pedro.testeapp.data.network.UnsplashApiService
-import retrofit2.create
-
-object UnsplashRetrofit {
+object UnsplashClient {
 
     private const val BASE_URL = "https://api.unsplash.com/"
 

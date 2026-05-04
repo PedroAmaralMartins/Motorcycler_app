@@ -2,15 +2,15 @@
 <resources>
 
     <style name="Theme.MotoX" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/toolbar_menu</item>
-        <item name="colorOnPrimary">@color/bg_primary</item>
-        <item name="colorSurface">@color/bg_surface2</item>
-        <item name="colorOnSurface">@color/text_primary</item>
-        <item name="android:colorBackground">@color/bg_primary</item>
-        <item name="colorControlNormal">@color/text_hint</item>
-        <item name="colorControlActivated">@color/accent</item>
-        <item name="android:statusBarColor">@color/toolbar_menu</item>
-        <item name="android:navigationBarColor">@color/toolbar_menu</item>
+        <item name="colorPrimary">@color/navy_blue</item>
+        <item name="colorOnPrimary">@color/black_wash</item>
+        <item name="colorSurface">@color/retro_black</item>
+        <item name="colorOnSurface">@color/white_smoke</item>
+        <item name="android:colorBackground">@color/black_wash</item>
+        <item name="colorControlNormal">@color/dark_gray</item>
+        <item name="colorControlActivated">@color/yellow_neon</item>
+        <item name="android:statusBarColor">@color/navy_blue</item>
+        <item name="android:navigationBarColor">@color/navy_blue</item>
 
     </style>
 

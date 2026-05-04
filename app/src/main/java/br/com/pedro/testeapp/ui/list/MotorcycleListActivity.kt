@@ -2,22 +2,21 @@ package br.com.pedro.testeapp.ui.list
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import androidx.core.view.WindowCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.com.pedro.testeapp.adapter.MotorcycleAdapter
 import br.com.pedro.testeapp.data.repository.MotorcycleRepository
-import br.com.pedro.testeapp.databinding.ActivityMainBinding
-import br.com.pedro.testeapp.ui.constants.KEY_MOTORCYCLER
-import br.com.pedro.testeapp.ui.details.DetalhesActivity
+import br.com.pedro.testeapp.databinding.ListMotorcyclesBinding
+import br.com.pedro.testeapp.ui.details.MotorcycleDetailsActivity
+import br.com.pedro.testeapp.ui.details.MotorcycleDetailsActivity.Companion.KEY_MOTORCYCLER
 
 class MotorcycleListActivity : AppCompatActivity() {
-
+    companion object {
+        const val EXTRA_BRAND = "MARCA_SELECIONADA"
+    }
     private val binding by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
+        ListMotorcyclesBinding.inflate(layoutInflater)
     }
     private val adapter by lazy {
         MotorcycleAdapter()
@@ -29,22 +28,40 @@ class MotorcycleListActivity : AppCompatActivity() {
         ViewModelProvider(this, factory)[MotorcycleViewModel::class.java]
     }
 
+    private var currentMark: String? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
 
+
+        setContentView(binding.root)
         setupToolbar()
         setupRecyclerView()
         observeViewModel()
 
-        WindowCompat.setDecorFitsSystemWindows(window,false)
 
-        val mark = intent.getStringExtra("MARCA_SELECIONADA")
-        if (mark != null) {
-            viewModel.getMotocycles(mark)
+
+
+        currentMark = intent.getStringExtra(EXTRA_BRAND )
+
+        Log.d("DEBUG", "Marca no onCreate: $currentMark")
+
+            currentMark?.let {
+            viewModel.getMotorcycles(it)
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        Log.d("DEBUG", "Marca salva: $currentMark")
+
+        currentMark?.let {
+            viewModel.getMotorcycles(it)
+        }
+
+    }
 
     private fun setupToolbar() {
         setSupportActionBar(binding.toolbar)
@@ -65,7 +82,7 @@ class MotorcycleListActivity : AppCompatActivity() {
         }
 
         adapter.clickItem = {
-            val intent = Intent(this, DetalhesActivity::class.java).apply {
+            val intent = Intent(this, MotorcycleDetailsActivity::class.java).apply {
                 putExtra(KEY_MOTORCYCLER, it)
             }
             startActivity(intent)
@@ -74,7 +91,8 @@ class MotorcycleListActivity : AppCompatActivity() {
 
     private fun observeViewModel() {
         viewModel.motorcycles.observe(this) { motorcycles ->
-            adapter.updateList(motorcycles)
+            Log.d("DEBUG", "Observe recebeu: ${motorcycles.size}")
+            adapter.submitList(motorcycles)
         }
     }
 

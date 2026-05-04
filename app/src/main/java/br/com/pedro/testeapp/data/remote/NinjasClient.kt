@@ -1,8 +1,6 @@
-package br.com.pedro.testeapp.data.retrofit
+package br.com.pedro.testeapp.data.remote
 
-import br.com.pedro.testeapp.data.network.NinjasApiService
-
-object NinjasRetrofit {
+object NinjasClient {
 
     private const val BASE_URL = "https://api.api-ninjas.com/v1/"
 
