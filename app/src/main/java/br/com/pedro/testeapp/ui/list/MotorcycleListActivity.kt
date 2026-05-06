@@ -22,7 +22,7 @@ class MotorcycleListActivity : AppCompatActivity() {
         MotorcycleAdapter()
     }
     private val factory by lazy {
-        MotorcycleViewModelFactory(MotorcycleRepository())
+        MotorcycleViewModel.MotorcyclerViewModelFactory(MotorcycleRepository())
     }
     private val viewModel by lazy {
         ViewModelProvider(this, factory)[MotorcycleViewModel::class.java]
@@ -42,11 +42,7 @@ class MotorcycleListActivity : AppCompatActivity() {
 
 
 
-
         currentMark = intent.getStringExtra(EXTRA_BRAND )
-
-        Log.d("DEBUG", "Marca no onCreate: $currentMark")
-
             currentMark?.let {
             viewModel.getMotorcycles(it)
         }
