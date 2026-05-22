@@ -8,6 +8,6 @@ data class UnsplashImagem(
     val urls: UnsplashUrls
 )
 data class UnsplashUrls (
-    val regular: String, //Good average image quality for details
-    val small: String // Small image, good for a list
+    val regular: String,
+    val small: String
 )

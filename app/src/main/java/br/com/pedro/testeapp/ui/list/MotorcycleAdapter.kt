@@ -1,12 +1,13 @@
-package br.com.pedro.testeapp.adapter
+package br.com.pedro.testeapp.ui.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import br.com.pedro.testeapp.R
+import br.com.pedro.testeapp.domain.Motorcycler
 import br.com.pedro.testeapp.databinding.ItemMotorcyclerBinding
-import br.com.pedro.testeapp.ui.Motorcycler
 import coil.load
 
 class MotorcycleAdapter(
@@ -14,9 +15,6 @@ class MotorcycleAdapter(
     var clickItem: (motorcycler: Motorcycler) -> Unit = {}
 ) : ListAdapter<Motorcycler, MotorcycleAdapter.ViewHolder>(MotorcycleDiffCallback()) {
 
-    fun updateList(newList: List<Motorcycler>) {
-        submitList(newList)
-    }
 
     inner class ViewHolder(private val binding: ItemMotorcyclerBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -26,8 +24,10 @@ class MotorcycleAdapter(
                 nameMotorcycle.text = motorcycler.nameMotorCycler
                 yearMotorcycle.text = motorcycler.yearMotorCycler
                 motorcycler.imagem?.let { imageUrl ->
-                    imgMotorcycle.load(imageUrl) {
+                    imgMotorcycle.load(motorcycler.imagem) {
                         crossfade(true)
+                        placeholder(R.drawable.ic_launcher_background)
+                        error(R.drawable.ic_launcher_background)
                     }
                 }
                 root.setOnClickListener {
@@ -36,6 +36,7 @@ class MotorcycleAdapter(
             }
         }
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemMotorcyclerBinding.inflate(

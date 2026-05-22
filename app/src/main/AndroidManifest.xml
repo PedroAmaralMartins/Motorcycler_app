@@ -24,13 +24,15 @@
         </activity>
         <activity
             android:name=".ui.list.MotorcycleListActivity"
-            android:exported="true">
+            android:exported="false"
+            android:parentActivityName=".ui.brands.BrandsListActivity">
 
         </activity>
 
         <activity
-            android:name=".ui.details.DetalhesActivity"
-            android:exported="true">
+            android:name=".ui.details.MotorcycleDetailsActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.list.MotorcycleListActivity">
         </activity>
 
 

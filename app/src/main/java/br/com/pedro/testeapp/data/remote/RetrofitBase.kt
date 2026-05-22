@@ -1,13 +1,14 @@
-package br.com.pedro.testeapp.data.retrofit
+package br.com.pedro.testeapp.data.remote
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.logging.HttpLoggingInterceptor
-
+import br.com.pedro.testeapp.BuildConfig
 object RetrofitBase {
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
-        level = HttpLoggingInterceptor.Level.BODY
+        level = if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY
+        else HttpLoggingInterceptor.Level.NONE
     }
 
     private val client = OkHttpClient.Builder()

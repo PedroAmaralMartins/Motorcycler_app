@@ -1,39 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- ======================================= -->
-    <!-- MEXA APENAS AQUI PARA MUDAR TUDO O APP  -->
-    <!-- ======================================= -->
 
-    <!-- Cor de destaque principal -->
-    <color name="accent">#E8FF00</color>
-    <color name="accent_dark">#B8CC00</color>
-    <color name="accent_alpha">#1AE8FF00</color>
+    <color name="yellow_neon">#E8FF00</color>
+    <color name="yellow_dark">#B8CC00</color>
+    <color name="yellow_alpha">#1AE8FF00</color>
 
     <!-- Cor de destaque secundária (headers de seção) -->
-    <color name="accent2">#FF6B00</color>
-    <color name="accent2_alpha">#1AFF6B00</color>
+    <color name="safety_orange">#FF6B00</color>
+    <color name="orange_alpha">#1AFF6B00</color>
 
     <!-- Backgrounds -->
-    <color name="bg_primary">#0D0D0D</color>
-    <color name="bg_surface">#161616</color>
-    <color name="bg_surface2">#1F1F1F</color>
-    <color name="bg_surface3">#2A2A2A</color>
+    <color name="black_wash">#0D0D0D</color>
+    <color name="dull_black">#161616</color>
+    <color name="retro_black">#1F1F1F</color>
+    <color name="galaxy_black">#2A2A2A</color>
+    <color name="navy_blue">#071B75</color>
 
     <!-- Textos -->
-    <color name="text_primary">#F0F0F0</color>
-    <color name="text_secondary">#888888</color>
-    <color name="text_hint">#444444</color>
+    <color name="white_smoke">#F0F0F0</color>
+    <color name="arabic_grey">#888888</color>
+    <color name="dark_gray">#444444</color>
 
-    <!-- Bordas -->
-    <color name="border">#2A2A2A</color>
 
     <!-- Marcas -->
-    <color name="brand_honda">#CC0000</color>
-    <color name="brand_yamaha">#0052CC</color>
-    <color name="brand_kawasaki">#008C00</color>
-    <color name="brand_suzuki">#FF7800</color>
-    <color name="brand_bmw">#7777AA</color>
-    <color name="brand_ducati">#CC2200</color>
+    <color name="free_speech_red">#CC0000</color>
+    <color name="vivid_blue">#0052CC</color>
+    <color name="strong_green">#008C00</color>
+    <color name="orange">#FF7800</color>
+    <color name="chetwode_blue">#7777AA</color>
+    <color name="fire_red">#CC2200</color>
 
 </resources>

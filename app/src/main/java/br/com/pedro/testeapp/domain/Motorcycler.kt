@@ -1,0 +1,45 @@
+package br.com.pedro.testeapp.domain
+
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+data class Motorcycler(
+    val nameMotorCycler: String,
+    val yearMotorCycler: String,
+    val imagem: String? = null,
+    val type: String = "",
+    val displacement: String = "",
+    val engine: String = "",
+    val power: String = "",
+    val torque: String = "",
+    val compression: String = "",
+    val boreStroke: String = "",
+    val valvesPerCylinder: String = "",
+    val fuelSystem: String = "",
+    val fuelControl: String = "",
+    val ignition: String = "",
+    val lubrication: String = "",
+    val cooling: String = "",
+    val gearbox: String = "",
+    val transmission: String = "",
+    val clutch: String = "",
+    val frame: String = "",
+    val frontSuspension: String = "",
+    val frontWheelTravel: String = "",
+    val rearSuspension: String = "",
+    val rearWheelTravel: String = "",
+    val frontTire: String = "",
+    val rearTire: String = "",
+    val frontBrakes: String = "",
+    val rearBrakes: String = "",
+    val totalWeight: String = "",
+    val seatHeight: String = "",
+    val totalHeight: String = "",
+    val totalLength: String = "",
+    val totalWidth: String = "",
+    val groundClearance: String = "",
+    val wheelbase: String = "",
+    val fuelCapacity: String = "",
+    val starter: String = "",
+): Parcelable

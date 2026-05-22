@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/text_hint">
+        android:background="@color/dark_gray">
 
         <ImageView
             android:id="@+id/img_motorcycle"
@@ -23,7 +23,7 @@
             app:layout_constraintEnd_toStartOf="@id/name_motorcycle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.3" />
+            app:layout_constraintWidth_percent="0.3"/>
 
         <TextView
             android:id="@+id/name_motorcycle"
@@ -34,37 +34,25 @@
             android:text="Nome da Moto"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/text_primary"
+            android:textColor="@color/white_smoke"
             android:fontFamily="sans-serif-light"
-            android:background="@color/text_hint"
+            android:background="@color/dark_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_motorcycle"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/year_motorcycle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:textColor="@color/text_primary"
+            android:textColor="@color/white_smoke"
             android:text="2020"
             android:textSize="15sp"
             android:fontFamily="sans-serif-light"
-            android:background="@color/text_hint"
+            android:background="@color/dark_gray"
             app:layout_constraintStart_toStartOf="@+id/name_motorcycle"
-            app:layout_constraintTop_toBottomOf="@+id/name_motorcycle" />
-
-        <TextView
-            android:id="@+id/price_motorcycle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:textColor="#00008B"
-            android:textSize="20sp"
-            android:fontFamily="sans-serif-medium"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/name_motorcycle"
-            app:layout_constraintTop_toBottomOf="@+id/year_motorcycle" />
+            app:layout_constraintTop_toBottomOf="@+id/name_motorcycle"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

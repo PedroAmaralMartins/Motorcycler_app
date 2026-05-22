@@ -1,4 +1,4 @@
-package br.com.pedro.testeapp.data.network
+package br.com.pedro.testeapp.data.remote
 
 import br.com.pedro.testeapp.data.model.MotorcycleInfo
 import retrofit2.Response

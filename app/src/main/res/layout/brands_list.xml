@@ -1,48 +1,70 @@
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_primary"
-    android:padding="@dimen/spacing_md">
+    android:fitsSystemWindows="true"
+    android:background="@color/black_wash">
 
-    <!-- Dropdown Brands -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/dropdown_me_list"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="0dp"
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/spacing_lg"
-        app:boxBackgroundColor="@color/bg_surface2"
-        app:boxStrokeColor="@color/text_primary"
-        app:hintTextColor="@color/text_secondary"
-        app:layout_constraintBottom_toTopOf="@id/searchBrands"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:fitsSystemWindows="true">
 
-        <AutoCompleteTextView
-            android:id="@+id/dropDownBrands"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_brands"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/input_height"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:hint="Selecione a marca da moto"
-            android:inputType="none"
-            android:padding="@dimen/spacing_md"
-            android:textColor="@color/text_primary"
-            android:textColorHint="@color/text_secondary" />
+            android:layout_height="?attr/actionBarSize"
+            app:logo="@drawable/motocycler_logo"
+            app:logoDescription="@string/logo_description"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- button searching -->
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="52dp"
-        android:id="@+id/searchBrands"
-        android:text="Pesquisar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="@dimen/spacing_xl" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/spacing_md"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dropdown_me_list"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_lg"
+            app:boxBackgroundColor="@color/retro_black"
+            app:boxStrokeColor="@color/white_smoke"
+            app:hintTextColor="@color/arabic_grey"
+            app:layout_constraintBottom_toTopOf="@id/searchBrands"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <AutoCompleteTextView
+                android:id="@+id/dropDownBrands"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/input_height"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="@string/select_brand_first"
+                android:inputType="none"
+                android:padding="@dimen/spacing_md"
+                android:textColor="@color/white_smoke"
+                android:textColorHint="@color/arabic_grey"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/searchBrands"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/search_brands"
+            android:layout_marginBottom="@dimen/spacing_xl"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
