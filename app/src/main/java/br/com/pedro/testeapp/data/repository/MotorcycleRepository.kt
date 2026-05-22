@@ -1,6 +1,7 @@
 package br.com.pedro.testeapp.data.repository
 
 import android.util.Log
+import br.com.pedro.testeapp.BuildConfig
 import br.com.pedro.testeapp.data.mapper.toDomain
 import br.com.pedro.testeapp.data.remote.NinjasClient
 import br.com.pedro.testeapp.data.remote.UnsplashClient
@@ -9,8 +10,8 @@ import br.com.pedro.testeapp.domain.Motorcycler
 class MotorcycleRepository {
 
     companion object {
-        private const val API_KEY = "BbtSIv8ffe0TMSwzXG6N04EwwoU32NwiKjtrhqRE"
-        private const val UNSPLASH_KEY = "Client-ID Az5pGJLFPfVh7JbM5PlPaBb8fbLJFvHpufvJkgDVhCI"
+        private const val API_KEY = BuildConfig.NINJAS_API_KEY
+        private const val UNSPLASH_KEY = BuildConfig.UNSPLASH_CLIENT_ID
     }
 
     suspend fun getMotorcycle(mark: String?): List<Motorcycler> {

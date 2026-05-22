@@ -1,5 +1,6 @@
 package br.com.pedro.testeapp.data.remote
 
+import br.com.pedro.testeapp.data.model.UnsplashResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Header

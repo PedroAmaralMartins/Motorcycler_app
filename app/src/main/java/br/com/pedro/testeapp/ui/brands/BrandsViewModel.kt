@@ -1,5 +1,6 @@
 package br.com.pedro.testeapp.ui.brands
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,5 +15,8 @@ class BrandsViewModel(private val repository: MotorcycleRepository): ViewModel()
     fun loadBrands(){
 
         _brands.value = repository.getBrands()
+
     }
+
+
 }

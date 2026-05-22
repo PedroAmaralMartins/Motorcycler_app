@@ -1,4 +1,4 @@
-package br.com.pedro.testeapp.data.remote
+package br.com.pedro.testeapp.data.model
 
 data class UnsplashResponse(
     val results: List<UnsplashImagem>

@@ -23,7 +23,7 @@
             app:layout_constraintEnd_toStartOf="@id/name_motorcycle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.3" />
+            app:layout_constraintWidth_percent="0.3"/>
 
         <TextView
             android:id="@+id/name_motorcycle"
@@ -39,7 +39,7 @@
             android:background="@color/dark_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_motorcycle"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/year_motorcycle"
@@ -52,7 +52,7 @@
             android:fontFamily="sans-serif-light"
             android:background="@color/dark_gray"
             app:layout_constraintStart_toStartOf="@+id/name_motorcycle"
-            app:layout_constraintTop_toBottomOf="@+id/name_motorcycle" />
+            app:layout_constraintTop_toBottomOf="@+id/name_motorcycle"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

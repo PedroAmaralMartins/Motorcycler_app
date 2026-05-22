@@ -33,8 +33,6 @@ class MotorcycleListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
         setContentView(binding.root)
         setupToolbar()
         setupRecyclerView()
@@ -48,8 +46,8 @@ class MotorcycleListActivity : AppCompatActivity() {
         Log.d("DEBUG", "Marca no onCreate: $currentMark")
 
             currentMark?.let {
-            viewModel.getMotorcycles(it)
-        }
+           viewModel.getMotorcycles(it)
+       }
     }
 
     override fun onResume() {
