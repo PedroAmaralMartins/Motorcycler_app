@@ -50,16 +50,6 @@ class MotorcycleListActivity : AppCompatActivity() {
        }
     }
 
-    override fun onResume() {
-        super.onResume()
-
-        Log.d("DEBUG", "Marca salva: $currentMark")
-
-        currentMark?.let {
-            viewModel.getMotorcycles(it)
-        }
-
-    }
 
     private fun setupToolbar() {
         setSupportActionBar(binding.toolbar)
@@ -70,7 +60,7 @@ class MotorcycleListActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         finish()
-        return super.onSupportNavigateUp()
+        return true
     }
 
     private fun setupRecyclerView() {

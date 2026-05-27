@@ -16,7 +16,6 @@ class MotorcycleViewModel(
     private val _motorcycles = MutableLiveData<List<Motorcycler>>()
     val motorcycles: LiveData<List<Motorcycler>> = _motorcycles
 
-
     private var currentMark: String? = null
 
 
@@ -26,8 +25,10 @@ class MotorcycleViewModel(
         viewModelScope.launch {
             try {
                 val result = repository.getMotorcycle(mark)
+
                 Log.d("VIEWMODEL", "Retrieved ${result.size} motorcycles")
-                _motorcycles.postValue(result)
+
+                _motorcycles.value = result
             } catch (e: Exception) {
                 Log.e("VIEWMODEL", "Error: ${e.message}", e)
             }
